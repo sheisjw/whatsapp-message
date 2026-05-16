@@ -1,0 +1,48 @@
+# WhatsApp 定时提醒配置文件
+# 每次新增提醒只需要在这里加一条，不需要改代码
+#
+# 字段说明：
+#   name        : 任务名称（仅用于日志，方便识别）
+#   contact     : 联系人姓名（与 WhatsApp 通讯录一致）或手机号（格式：+8613800138000）
+#   message     : 发送的消息内容，支持变量：{month} {day} {year}
+#   schedule    : 触发规则，支持两种格式：
+#                   day: 20          每月 20 号触发
+#                   day: last        每月最后一天触发
+#                   weekday: monday  每周一触发（monday/tuesday/...）
+
+reminders:
+
+  - name: 提醒张三交月报
+    contact: 张三
+    message: |
+      Hi，{month}月月报记得今天提交哦 📋
+    schedule:
+      day: 25
+
+  - name: 提醒李四更新数据
+    contact: 李四
+    message: |
+      每月20号提醒：麻烦更新一下本月数据，谢谢！
+    schedule:
+      day: 20
+
+  - name: 提醒王五周会
+    contact: +8613800138000   # 也可以直接填手机号
+    message: |
+      周会提醒：今天下午3点，别忘了 🙂
+    schedule:
+      weekday: monday
+
+  - name: 提醒ST还信用卡
+    contact: +6598796109   # 也可以直接填手机号
+    message: |
+      还信用卡，别忘了 🙂
+    schedule:
+      day: 16
+
+  # 继续添加更多提醒 ↓
+  # - name: 示例任务
+  #   contact: 联系人名字
+  #   message: 消息内容
+  #   schedule:
+  #     day: 1
